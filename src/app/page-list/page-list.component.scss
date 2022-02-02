@@ -1,4 +1,4 @@
-@import "../../scss/var";
+@import "../../style/var";
 
 // #################################################################################################
 // #################################################################################################
@@ -7,6 +7,7 @@
 .list-view {
   width: 100%;
   padding: $cube * 2;
+
   h4 {
     font-family: $font1;
     color: $white;
@@ -16,13 +17,23 @@
     font-weight: regular;
     transition: all 250ms;
     cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
     span {
       font-size: $cube * 1.5;
     }
   }
+
   h4:hover {
     color: $prime;
   }
+
   .todo-elements {
     width: 100%;
     margin: 0;

@@ -4,16 +4,19 @@
   src: url("./assets/fonts/Play-Bold.ttf");
   font-weight: bold;
 }
+
 @font-face {
   font-family: "Play";
   src: url("./assets/fonts/Play-Regular.ttf");
   font-weight: normal;
 }
+
 @font-face {
   font-family: "Rubik";
   src: url("./assets/fonts/Rubik-Bold.ttf");
   font-weight: bold;
 }
+
 @font-face {
   font-family: "Rubik";
   src: url("./assets/fonts/Rubik-Regular.ttf");
@@ -45,4 +48,17 @@ html {
   padding: 0;
   font-size: 10px;
   background-color: $second;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.center {
+  text-align: center;
 }

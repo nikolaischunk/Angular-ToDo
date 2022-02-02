@@ -1,0 +1,42 @@
+@import "../../../style/var";
+
+// #################################################################################################
+// #################################################################################################
+// #################################################################################################
+
+header {
+  border-top: $cube * 0.5 solid $prime;
+  width: 100%;
+  padding: $cube * 2;
+
+  h1 {
+    font-family: $font1;
+    color: $white;
+    line-height: 0.8em;
+    font-weight: bold;
+    font-size: $cube * 6;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+
+    span {
+      color: $prime;
+    }
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

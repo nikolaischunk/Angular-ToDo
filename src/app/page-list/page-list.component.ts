@@ -42,6 +42,11 @@ export class PageListComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  public create(event: ToDo): void {
+    event.position = this.$todos.length + 1;
+    this.$todos.push(event);
+  }
+
   public update(event: EventPing): void {
     if ('check' === event.label) {
       console.log(

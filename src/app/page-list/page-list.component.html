@@ -10,7 +10,10 @@
       *ngFor="let toDo of $todos"
     ></app-template-todo>
   </div>
-  <app-template-todo-form *ngIf="toDoShow"></app-template-todo-form>
+  <app-template-todo-form
+    (ping)="create($event)"
+    *ngIf="toDoShow"
+  ></app-template-todo-form>
 
   <h4 (click)="toDoDoneShow = !toDoDoneShow" class="noselect">
     Done <span>{{ $todosdone.length }}</span>

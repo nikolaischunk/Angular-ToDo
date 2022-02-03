@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { EventPing } from 'src/app/_interface/eventping';
 import { ToDo } from '../../_interface/todo';
 
 @Component({
@@ -8,6 +9,7 @@ import { ToDo } from '../../_interface/todo';
 })
 export class TemplateTodoFormComponent implements OnInit {
   public toDo$: ToDo;
+  @Output() ping: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
     this.toDo$ = {
@@ -21,7 +23,7 @@ export class TemplateTodoFormComponent implements OnInit {
   ngOnInit(): void {}
 
   public createToDo(event?: any): void {
-    console.log(this.toDo$);
+    this.ping.emit(this.toDo$);
     this.toDo$ = {
       //set the form back to empty state
       id: undefined,

@@ -1,23 +1,25 @@
 <app-template-header></app-template-header>
 <div class="list-view">
   <h4 (click)="toDoShow = !toDoShow" class="noselect">
-    Open <span>( 2 )</span>
+    Open <span>{{ $todos.length }}</span>
   </h4>
   <div *ngIf="toDoShow" class="todo-elements">
-    <app-template-todo></app-template-todo>
-    <app-template-todo></app-template-todo>
-    <app-template-todo></app-template-todo>
-    <app-template-todo></app-template-todo>
-    <app-template-todo></app-template-todo>
-    <app-template-todo></app-template-todo>
-    <app-template-todo></app-template-todo>
+    <app-template-todo
+      (ping)="update($event)"
+      [toDo$]="toDo"
+      *ngFor="let toDo of $todos"
+    ></app-template-todo>
   </div>
   <app-template-todo-form *ngIf="toDoShow"></app-template-todo-form>
+
   <h4 (click)="toDoDoneShow = !toDoDoneShow" class="noselect">
-    Done <span>( 2 )</span>
+    Done <span>{{ $todosdone.length }}</span>
   </h4>
-  <div *ngIf="toDoDoneShow" class="todo-elements">
-    <app-template-todo></app-template-todo>
-    <app-template-todo></app-template-todo>
+  <div *ngIf="toDoDoneShow" class="todo-elements-done">
+    <app-template-todo
+      [toDo$]="toDo"
+      (ping)="update($event)"
+      *ngFor="let toDo of $todosdone"
+    ></app-template-todo>
   </div>
 </div>

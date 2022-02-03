@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageListComponent implements OnInit {
   public toDoShow: boolean;
+  public toDoDoneShow: boolean;
 
   constructor() {
     this.toDoShow = true;
+    this.toDoDoneShow = true;
   }
 
   ngOnInit(): void {}

@@ -1,17 +1,30 @@
-<div class="todo">
+<div class="todo" [class.done]="toDo$.status">
   <div class="todo-content">
-    <div class="handle">
-      <!-- <img src="../../../assets/svg/drag.svg" />/ -->
+    <div class="handle noselect">
+      <img src="../../../assets/svg/drag.svg" />
     </div>
     <div class="todo-content-check">
-      <img src="../../../assets/svg/checkbox-empty.svg" />
-      <img src="../../../assets/svg/checkbox-done.svg" />
+      <img
+        *ngIf="!toDo$.status"
+        (click)="changeCheck($event)"
+        src="../../../assets/svg/checkbox-empty.svg"
+      />
+      <img
+        (click)="changeCheck($event)"
+        *ngIf="toDo$.status"
+        src="../../../assets/svg/checkbox-done.svg"
+      />
     </div>
     <div class="todo-content-title">
-      <input type="text" placeholder="Name of the ToDo Point" />
+      <input
+        (blur)="changeLabel($event)"
+        type="text"
+        [(ngModel)]="toDo$.label"
+        placeholder="Name of the ToDo Point"
+      />
     </div>
   </div>
-  <div class="delete noselect">
+  <div class="delete noselect" (click)="deleteToDo($event)">
     <span>Delete</span>
   </div>
 </div>
